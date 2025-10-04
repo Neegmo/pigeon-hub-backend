@@ -50,5 +50,11 @@ mongoose
 
 // Routes
 app.use("/", require("./routes/index"));
+app.use("/users", require("./routes/userRoutes"));
+app.use("/pidgeons", require("./routes/pigeonRoutes"));
+app.use("/market-items", require("./routes/marketItemRoutes"));
+app.use("/events", require("./routes/eventRoutes"));
+app.use("/posts", require("./routes/postRoutes"));
+app.use("/messages", require("./routes/messageRoutes"));
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
