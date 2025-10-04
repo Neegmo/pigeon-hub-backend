@@ -44,12 +44,9 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
-// Passport middleware
-// app.use(passport.initialize());
-// require("./config/passport")(passport);
-
 // Routes
 app.use("/", require("./routes/index"));
+app.use("/auth", require("./routes/auth"));
 app.use("/users", require("./routes/userRoutes"));
 app.use("/pidgeons", require("./routes/pigeonRoutes"));
 app.use("/market-items", require("./routes/marketItemRoutes"));
