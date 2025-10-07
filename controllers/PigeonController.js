@@ -3,7 +3,8 @@ const Pidgeon = require("../models/Pidgeon");
 // Create
 exports.createPidgeon = async (req, res) => {
   try {
-    const pidgeon = new Pidgeon(req.body);
+    const pidgeonData = { ...req.body, user_id: req.user._id };
+    const pidgeon = new Pidgeon(pidgeonData);
     await pidgeon.save();
     res.json(pidgeon);
   } catch (err) {
@@ -14,7 +15,9 @@ exports.createPidgeon = async (req, res) => {
 // Read all
 exports.getPidgeons = async (req, res) => {
   try {
-    const pidgeons = await Pidgeon.find().populate("user_id parent1_id parent2_id");
+    const pidgeons = await Pidgeon.find().populate(
+      "user_id parent1_id parent2_id"
+    );
     res.json(pidgeons);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -24,7 +27,9 @@ exports.getPidgeons = async (req, res) => {
 // Read one
 exports.getPidgeonById = async (req, res) => {
   try {
-    const pidgeon = await Pidgeon.findById(req.params.id).populate("user_id parent1_id parent2_id");
+    const pidgeon = await Pidgeon.findById(req.params.id).populate(
+      "user_id parent1_id parent2_id"
+    );
     res.json(pidgeon);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -34,7 +39,9 @@ exports.getPidgeonById = async (req, res) => {
 // Update
 exports.updatePidgeon = async (req, res) => {
   try {
-    const pidgeon = await Pidgeon.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const pidgeon = await Pidgeon.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     res.json(pidgeon);
   } catch (err) {
     res.status(500).json({ error: err.message });

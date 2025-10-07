@@ -3,7 +3,8 @@ const MarketItem = require("../models/MarketItem");
 // Create
 exports.createMarketItem = async (req, res) => {
   try {
-    const item = new MarketItem(req.body);
+    const itemData = { ...req.body, user_id: req.user._id };
+    const item = new MarketItem(itemData);
     await item.save();
     res.json(item);
   } catch (err) {
@@ -34,7 +35,9 @@ exports.getMarketItemById = async (req, res) => {
 // Update
 exports.updateMarketItem = async (req, res) => {
   try {
-    const item = await MarketItem.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const item = await MarketItem.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     res.json(item);
   } catch (err) {
     res.status(500).json({ error: err.message });

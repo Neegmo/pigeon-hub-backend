@@ -1,15 +1,26 @@
 const express = require("express");
 const mongoose = require("mongoose");
+require("dotenv").config();
+const cors = require("cors");
 const passport = require("passport");
 require("./config/passport")(passport);
 const path = require("path");
 const User = require("./models/User"); // Ensure User model is required
-require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
+
+// CORS configuration
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || "http://localhost:3000", // Allow frontend URL
+    credentials: true, // Allow cookies and authorization headers
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
 const session = require("express-session");
 

@@ -3,7 +3,8 @@ const Post = require("../models/Post");
 // Create
 exports.createPost = async (req, res) => {
   try {
-    const post = new Post(req.body);
+    const postData = { ...req.body, user_id: req.user._id };
+    const post = new Post(postData);
     await post.save();
     res.json(post);
   } catch (err) {
@@ -34,7 +35,9 @@ exports.getPostById = async (req, res) => {
 // Update
 exports.updatePost = async (req, res) => {
   try {
-    const post = await Post.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const post = await Post.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     res.json(post);
   } catch (err) {
     res.status(500).json({ error: err.message });

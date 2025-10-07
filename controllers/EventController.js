@@ -3,7 +3,8 @@ const Event = require("../models/Event");
 // Create
 exports.createEvent = async (req, res) => {
   try {
-    const event = new Event(req.body);
+    const eventData = { ...req.body, user_id: req.user._id };
+    const event = new Event(eventData);
     await event.save();
     res.json(event);
   } catch (err) {
@@ -34,7 +35,9 @@ exports.getEventById = async (req, res) => {
 // Update
 exports.updateEvent = async (req, res) => {
   try {
-    const event = await Event.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const event = await Event.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     res.json(event);
   } catch (err) {
     res.status(500).json({ error: err.message });
