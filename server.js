@@ -15,8 +15,8 @@ app.use(express.static(path.join(__dirname, "public")));
 // CORS configuration
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:3000", // Allow frontend URL
-    credentials: true, // Allow cookies and authorization headers
+    origin: "*", // Allow all origins (wildcard)
+    credentials: false, // Must be false when using wildcard origin
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })

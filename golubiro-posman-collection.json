@@ -18,16 +18,28 @@
               "mode": "raw",
               "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"123456\",\n  \"name\": \"John Doe\",\n  \"description\": \"Pigeon fan\",\n  \"profileImage\": \"url-to-image\"\n}"
             },
-            "url": { "raw": "http://localhost:3000/users", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["users"] }
+            "url": {
+              "raw": "https://golubiro-api.vercel.app/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["users"]
+            }
           }
         },
         {
           "name": "Get All Users",
-          "request": { "method": "GET", "url": "http://localhost:3000/users" }
+          "request": {
+            "method": "GET",
+            "url": "https://golubiro-api.vercel.app/users"
+          }
         },
         {
           "name": "Get User By ID",
-          "request": { "method": "GET", "url": "http://localhost:3000/users/:id" }
+          "request": {
+            "method": "GET",
+            "url": "https://golubiro-api.vercel.app/users/:id"
+          }
         },
         {
           "name": "Update User",
@@ -38,12 +50,15 @@
               "mode": "raw",
               "raw": "{\n  \"name\": \"Updated Name\"\n}"
             },
-            "url": "http://localhost:3000/users/:id"
+            "url": "https://golubiro-api.vercel.app/users/:id"
           }
         },
         {
           "name": "Delete User",
-          "request": { "method": "DELETE", "url": "http://localhost:3000/users/:id" }
+          "request": {
+            "method": "DELETE",
+            "url": "https://golubiro-api.vercel.app/users/:id"
+          }
         }
       ]
     },
@@ -59,21 +74,39 @@
               "mode": "raw",
               "raw": "{\n  \"user_id\": \"<USER_ID>\",\n  \"image\": \"url\",\n  \"weight\": 350,\n  \"type\": \"Racer\"\n}"
             },
-            "url": "http://localhost:3000/pidgeons"
+            "url": "http://golubiro-api.vercel.app/pidgeons"
           }
         },
-        { "name": "Get All Pidgeons", "request": { "method": "GET", "url": "http://localhost:3000/pidgeons" } },
-        { "name": "Get Pidgeon By ID", "request": { "method": "GET", "url": "http://localhost:3000/pidgeons/:id" } },
+        {
+          "name": "Get All Pidgeons",
+          "request": {
+            "method": "GET",
+            "url": "http://golubiro-api.vercel.app/pidgeons"
+          }
+        },
+        {
+          "name": "Get Pidgeon By ID",
+          "request": {
+            "method": "GET",
+            "url": "http://golubiro-api.vercel.app/pidgeons/:id"
+          }
+        },
         {
           "name": "Update Pidgeon",
           "request": {
             "method": "PUT",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": { "mode": "raw", "raw": "{\n  \"weight\": 400\n}" },
-            "url": "http://localhost:3000/pidgeons/:id"
+            "url": "http://golubiro-api.vercel.app/pidgeons/:id"
           }
         },
-        { "name": "Delete Pidgeon", "request": { "method": "DELETE", "url": "http://localhost:3000/pidgeons/:id" } }
+        {
+          "name": "Delete Pidgeon",
+          "request": {
+            "method": "DELETE",
+            "url": "http://golubiro-api.vercel.app/pidgeons/:id"
+          }
+        }
       ]
     },
     {
@@ -88,21 +121,39 @@
               "mode": "raw",
               "raw": "{\n  \"user_id\": \"<USER_ID>\",\n  \"title\": \"Fancy Cage\",\n  \"description\": \"Large cage\",\n  \"image\": \"url\",\n  \"price\": 100\n}"
             },
-            "url": "http://localhost:3000/market-items"
+            "url": "http://golubiro-api.vercel.app/market-items"
           }
         },
-        { "name": "Get All Market Items", "request": { "method": "GET", "url": "http://localhost:3000/market-items" } },
-        { "name": "Get Market Item By ID", "request": { "method": "GET", "url": "http://localhost:3000/market-items/:id" } },
+        {
+          "name": "Get All Market Items",
+          "request": {
+            "method": "GET",
+            "url": "http://golubiro-api.vercel.app/market-items"
+          }
+        },
+        {
+          "name": "Get Market Item By ID",
+          "request": {
+            "method": "GET",
+            "url": "http://golubiro-api.vercel.app/market-items/:id"
+          }
+        },
         {
           "name": "Update Market Item",
           "request": {
             "method": "PUT",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": { "mode": "raw", "raw": "{\n  \"price\": 120\n}" },
-            "url": "http://localhost:3000/market-items/:id"
+            "url": "http://golubiro-api.vercel.app/market-items/:id"
           }
         },
-        { "name": "Delete Market Item", "request": { "method": "DELETE", "url": "http://localhost:3000/market-items/:id" } }
+        {
+          "name": "Delete Market Item",
+          "request": {
+            "method": "DELETE",
+            "url": "http://golubiro-api.vercel.app/market-items/:id"
+          }
+        }
       ]
     },
     {
@@ -117,21 +168,42 @@
               "mode": "raw",
               "raw": "{\n  \"user_id\": \"<USER_ID>\",\n  \"title\": \"Race Day\",\n  \"description\": \"Annual pigeon race\",\n  \"date\": \"2025-12-01\"\n}"
             },
-            "url": "http://localhost:3000/events"
+            "url": "http://golubiro-api.vercel.app/events"
           }
         },
-        { "name": "Get All Events", "request": { "method": "GET", "url": "http://localhost:3000/events" } },
-        { "name": "Get Event By ID", "request": { "method": "GET", "url": "http://localhost:3000/events/:id" } },
+        {
+          "name": "Get All Events",
+          "request": {
+            "method": "GET",
+            "url": "http://golubiro-api.vercel.app/events"
+          }
+        },
+        {
+          "name": "Get Event By ID",
+          "request": {
+            "method": "GET",
+            "url": "http://golubiro-api.vercel.app/events/:id"
+          }
+        },
         {
           "name": "Update Event",
           "request": {
             "method": "PUT",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"title\": \"Updated Race\"\n}" },
-            "url": "http://localhost:3000/events/:id"
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Race\"\n}"
+            },
+            "url": "http://golubiro-api.vercel.app/events/:id"
           }
         },
-        { "name": "Delete Event", "request": { "method": "DELETE", "url": "http://localhost:3000/events/:id" } }
+        {
+          "name": "Delete Event",
+          "request": {
+            "method": "DELETE",
+            "url": "http://golubiro-api.vercel.app/events/:id"
+          }
+        }
       ]
     },
     {
@@ -146,21 +218,42 @@
               "mode": "raw",
               "raw": "{\n  \"user_id\": \"<USER_ID>\",\n  \"title\": \"My new pigeon\",\n  \"description\": \"Look at this beauty\",\n  \"image\": \"url\"\n}"
             },
-            "url": "http://localhost:3000/posts"
+            "url": "http://golubiro-api.vercel.app/posts"
           }
         },
-        { "name": "Get All Posts", "request": { "method": "GET", "url": "http://localhost:3000/posts" } },
-        { "name": "Get Post By ID", "request": { "method": "GET", "url": "http://localhost:3000/posts/:id" } },
+        {
+          "name": "Get All Posts",
+          "request": {
+            "method": "GET",
+            "url": "http://golubiro-api.vercel.app/posts"
+          }
+        },
+        {
+          "name": "Get Post By ID",
+          "request": {
+            "method": "GET",
+            "url": "http://golubiro-api.vercel.app/posts/:id"
+          }
+        },
         {
           "name": "Update Post",
           "request": {
             "method": "PUT",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"title\": \"Updated Post\"\n}" },
-            "url": "http://localhost:3000/posts/:id"
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Post\"\n}"
+            },
+            "url": "http://golubiro-api.vercel.app/posts/:id"
           }
         },
-        { "name": "Delete Post", "request": { "method": "DELETE", "url": "http://localhost:3000/posts/:id" } }
+        {
+          "name": "Delete Post",
+          "request": {
+            "method": "DELETE",
+            "url": "http://golubiro-api.vercel.app/posts/:id"
+          }
+        }
       ]
     },
     {
@@ -175,21 +268,42 @@
               "mode": "raw",
               "raw": "{\n  \"sender_id\": \"<USER_ID>\",\n  \"receiver_id\": \"<USER_ID>\",\n  \"message\": \"Hello!\"\n}"
             },
-            "url": "http://localhost:3000/messages"
+            "url": "http://golubiro-api.vercel.app/messages"
           }
         },
-        { "name": "Get All Messages", "request": { "method": "GET", "url": "http://localhost:3000/messages" } },
-        { "name": "Get Message By ID", "request": { "method": "GET", "url": "http://localhost:3000/messages/:id" } },
+        {
+          "name": "Get All Messages",
+          "request": {
+            "method": "GET",
+            "url": "http://golubiro-api.vercel.app/messages"
+          }
+        },
+        {
+          "name": "Get Message By ID",
+          "request": {
+            "method": "GET",
+            "url": "http://golubiro-api.vercel.app/messages/:id"
+          }
+        },
         {
           "name": "Update Message",
           "request": {
             "method": "PUT",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"message\": \"Updated message\"\n}" },
-            "url": "http://localhost:3000/messages/:id"
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"Updated message\"\n}"
+            },
+            "url": "http://golubiro-api.vercel.app/messages/:id"
           }
         },
-        { "name": "Delete Message", "request": { "method": "DELETE", "url": "http://localhost:3000/messages/:id" } }
+        {
+          "name": "Delete Message",
+          "request": {
+            "method": "DELETE",
+            "url": "http://golubiro-api.vercel.app/messages/:id"
+          }
+        }
       ]
     }
   ]
